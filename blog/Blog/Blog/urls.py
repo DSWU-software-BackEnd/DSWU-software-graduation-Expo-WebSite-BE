@@ -15,10 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from BlogApp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.list, name='list') # 루트 경로로 요청이 왔을때 list함수를 실행하겠다
+    path('', include('BlogApp.urls')), # 루트 경로로 요청이 왔을때 list함수를 실행하겠다
 ]
