@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 글 작성 버튼 -->
+    <a href="{% url 'create' %}">글 작성하기</a>
+    <hr>
+
     {% for post in posts %} <!-- 반복적인 동작 수행 -->
-        <h2>{{ post.title }}</h2>
+        <h2><a href = "{% url 'detail' post.id %}">{{ post.title }}</a></h2> <!-- 해당 게시글의 상세 페이지로 이동하는 링크 생성 (게시글의 id도 함께 전달) -->
         <p>{{ post.content }}</p>
         <p>{{ post.created_at }}</p>
     
