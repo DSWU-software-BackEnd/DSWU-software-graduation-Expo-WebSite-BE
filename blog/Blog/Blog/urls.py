@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from BlogApp import views # BlogApp 앱의 views import
+#from BlogApp import views # BlogApp 앱의 views import
 
 urlpatterns = [
     path("admin/", admin.site.urls),
